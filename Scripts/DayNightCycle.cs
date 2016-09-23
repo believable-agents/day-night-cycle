@@ -207,7 +207,7 @@ public class DayNightCycle : MonoBehaviour {
 			else if(SunTime > SunCycle [2] + ((Time.deltaTime / 3600) * CurrentSpeed)) {
 				// Slowly phase the sun out, and change its colour
 				Sun.GetComponent<Light>().intensity = 0.5f - 0.5f * ((SunTime - SunCycle[2]) / (SunCycle[3] - SunCycle[2]));
-				Sun.GetComponent<Light>().shadowStrength = 1f - 1f * ((SunTime - SunCycle[2]) / (SunCycle[3] - SunCycle[2]));
+				Sun.GetComponent<Light>().shadowStrength = Mathf.Clamp(1f - 1f * ((SunTime - SunCycle[2]) / (SunCycle[3] - SunCycle[2])), 0, 1);
 				Sun.GetComponent<Light>().color = Color.Lerp(SunColour, SunRiseColour, ((SunTime - SunCycle[2]) / (SunCycle[3] - SunCycle[2])));
 				
 				float time = ((SunTime - SunCycle[2]) / (SunCycle[3] - SunCycle[2]));
