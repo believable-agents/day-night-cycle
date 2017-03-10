@@ -45,10 +45,10 @@ Material:
       second: 0.425
     - first:
         name: _BlendDusk
-      second: -0.040298462
+      second: 0
     - first:
         name: _BlendNight
-      second: 1
+      second: 0
     m_Colors:
     - first:
         name: _Color

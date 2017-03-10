@@ -72,7 +72,7 @@ public class DayNightCycle : MonoBehaviour {
 		CurrentSpeed = DaySpeed;
         SunriseOffset = ((DaySpeed + NightSpeed) / 2) / 3600;
 		
-		if (DayInMinutes == 0) {
+		if (DayInMinutes == 0 || !MoveSun) {
 			return;
 		}
 		
@@ -139,7 +139,7 @@ public class DayNightCycle : MonoBehaviour {
 			DebugConsole.Log(string.Format("{0:00}:{1:00}", Hour, Minute));
 		}
 		
-		if (DayInMinutes == 0) {
+		if (DayInMinutes == 0 || !MoveSun) {
 			return;
 		}
 
